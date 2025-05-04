@@ -1,5 +1,4 @@
 import React from 'react';
-import { documents } from './Footer';
 
 const DocumentIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +27,30 @@ const TrashIcon = () => (
             stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
+
+const documents = [
+    {
+        id: 1,
+        name: 'W-2 Form 2022.pdf',
+        type: 'PDF',
+        date: '2023-01-15',
+        size: '1.5 MB'
+    },
+    {
+        id: 2,
+        name: '1099-INT.pdf',
+        type: 'PDF',
+        date: '2023-01-20',
+        size: '0.8 MB'
+    },
+    {
+        id: 3,
+        name: 'Property Tax Receipt.pdf',
+        type: 'PDF',
+        date: '2023-02-05',
+        size: '1.2 MB'
+    }
+];
 
 const DocumentsTable = () => {
     return (

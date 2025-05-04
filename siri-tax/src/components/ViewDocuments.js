@@ -5,12 +5,12 @@ const ViewDocuments = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [documentType, setDocumentType] = useState('All Types');
   const [view, setView] = useState('grid'); // 'grid' or 'list'
-
+  
   // Sample document data
-  const [documents, setDocuments] = useState([
+  const documents = [
     {
       id: 1,
-      name: 'W-2 Form.pdf',
+      name: 'W-2 Form 2022.pdf',
       date: '2023-01-15',
       size: '1.2 MB',
       type: 'PDF'
@@ -31,26 +31,26 @@ const ViewDocuments = () => {
     },
     {
       id: 4,
-      name: 'W-2 Form .pdf',
+      name: 'W-2 Form 2023.pdf',
       date: '2023-01-15',
       size: '1.2 MB',
-      type: 'PNG'
+      type: 'PDF'
     },
     {
       id: 5,
-      name: 'Tax Receipt.pdf',
+      name: 'Property Tax Receipt.pdf',
       date: '2023-01-15',
       size: '1.2 MB',
-      type: 'DOC'
+      type: 'PDF'
     },
     {
       id: 6,
-      name: 'Property Tax.pdf',
+      name: 'Property Tax Receipt 2025.pdf',
       date: '2024-01-15',
       size: '1.2 MB',
       type: 'PDF'
     }
-  ]);
+  ];
 
   // Filter documents based on search and type filter
   const filteredDocuments = documents.filter(doc => {
@@ -58,11 +58,6 @@ const ViewDocuments = () => {
     const matchesType = documentType === 'All Types' || doc.type === documentType;
     return matchesSearch && matchesType;
   });
-
-  const handleDelete = (id) => {
-    const updatedDocs = documents.filter(doc => doc.id !== id);
-    setDocuments(updatedDocs);
-  };
 
   return (
     <div className="view-documents-page">
@@ -148,15 +143,17 @@ const ViewDocuments = () => {
                 <span className="document-date">{doc.date}</span>
               </div>
               <div className="document-actions">
-                <button className="action-button delete-button" onClick={() => handleDelete(doc.id)} aria-label="Delete document">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 6H21" stroke="red" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="red" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
                 <button className="action-button" aria-label="Download document">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M12 3V15M12 15L15 12M12 15L9 12" stroke="green" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M7 10L12 15L17 10" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 15V3" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+                <button className="action-button" aria-label="View document details">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 5C7.63636 5 4 8.3 4 12C4 15.7 7.63636 19 12 19C16.3636 19 20 15.7 20 12C20 8.3 16.3636 5 12 5Z" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
               </div>
