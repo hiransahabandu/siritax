@@ -39,27 +39,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;export const documents = [
-    {
-        id: 1,
-        name: 'W-2 Form 2022.pdf',
-        type: 'PDF',
-        date: '2023-01-15',
-        size: '1.5 MB'
-    },
-    {
-        id: 2,
-        name: '1099-INT.pdf',
-        type: 'PDF',
-        date: '2023-01-20',
-        size: '0.8 MB'
-    },
-    {
-        id: 3,
-        name: 'Property Tax Receipt.pdf',
-        type: 'PDF',
-        date: '2023-02-05',
-        size: '1.2 MB'
-    }
-];
- 
+export default Footer; 
